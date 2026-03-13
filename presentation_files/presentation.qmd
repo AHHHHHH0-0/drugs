@@ -1,0 +1,59 @@
+```{r library and data}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(bayesrules)
+library(bayesplot)
+library(rstanarm)
+
+drug_data <- read.csv("data/drugs.csv")
+```
+
+---
+title: "Stats 115 Final Presentation: Drug Use in Young Adults"
+author: "Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran"
+format: 
+  revealjs: 
+      theme: moon
+---
+
+## Data Description
+
+
+## Problem/Question Description
+- Across different age groups, which state (out of the top 5 with the highest populations in the United States) has the highest rate of alcohol usage disorder?
+- Which age group has the overall highest rate?
+
+## Prior Description
+
+
+## Age Group 1: 12-17 {.nostretch}
+:::: {.columns}
+
+::: {.column width="40%"}
+yap
+:::
+
+::: {.column width="60%"}
+```{r AG1}
+alc_dis_rate_1825 <- drug_data %>% 
+  select( state = State,alc_dis_rate   = `Rates.Alcohol.Use.Disorder.Past.Year.18.25`,
+  ) %>% filter(state %in% c("California", "Texas", "Florida", "New York", "Pennsylvania"))
+
+mean_rate <- mean(alc_dis_rate_1825$alc_dis_rate)
+ggplot(alc_dis_rate_1825, aes(x = state, y = alc_dis_rate)) +
+  geom_boxplot() +
+  labs(title = "Alcohol Disorder Rate for Age Range 18-25", x = "State", y = "Alcohol Disorder Rate") + geom_hline(yintercept = mean_rate, color = "red", linetype = "solid")
+```
+:::
+
+::::
+
+## Age Group 2: 18-25
+
+## Age Group 3: 26+
+
+## Age Group Comparison
+
+
+## Analysis & Conclusion

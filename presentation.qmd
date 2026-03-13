@@ -1,5 +1,0 @@
----
-title: "Group 14 Presentation"
-format: html
----
-
