@@ -40,6 +40,7 @@ format:
       theme: moon
       width: 1400
       margin: 0.05
+      center: false
 ---
 
 ## Data Description
@@ -51,6 +52,24 @@ format:
 
 ## Prior Description
 
+- **Weakly informative priors**
+- Rate is measured **per 1,000**
+- Age pattern: **12--17 < 26+ < 18--25**
+- **All 50 states** → hierarchical model with **partial pooling**
+
+**Intercept priors**
+
+- `12--17: normal(30, 15)`
+
+- `18--25: normal(140, 30)`
+
+- `26+: normal(60, 20)`
+
+**Other priors**
+
+- `aux: exponential(1)`
+
+- `cov: decov(1, 1, 1, 1)`
 
 ## Age Group 1: 12-17 {.nostretch}
 :::: {.columns}
