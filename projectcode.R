@@ -113,11 +113,7 @@ ggplot(alc_dis_rate_1825, aes(x = state, y = alc_dis_rate)) +
 adr_1825_hierarchical <- stan_glmer(
   alc_dis_rate ~ (1 | state),
   data = alc_dis_rate_1825, family = gaussian,
-<<<<<<< HEAD
   prior_intercept = normal(140, 30),
-=======
-  prior_intercept = normal(148, 30, autoscale = TRUE),
->>>>>>> ce99a659240f020eef440cf56190e4d4ec159f8e
   prior_aux = exponential(1, autoscale = TRUE),
   prior_covariance = decov(reg = 1, conc = 1, shape = 1, scale = 1),
   chains = 4, iter=5000*2, seed=84375, refresh=FALSE)
