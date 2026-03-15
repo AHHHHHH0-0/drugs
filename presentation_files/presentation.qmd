@@ -50,7 +50,7 @@ format:
 - Across different age groups, which state (out of the top 5 with the highest populations in the United States) has the highest rate of alcohol usage disorder?
 - Which age group has the overall highest rate?
 
-## Prior Description
+## Prior Description {.smaller}
 
 - **Weakly informative priors**
 - Rate is measured **per 1,000**
@@ -60,15 +60,12 @@ format:
 **Intercept priors**
 
 - `12--17: normal(30, 15)`
-
 - `18--25: normal(140, 30)`
-
 - `26+: normal(60, 20)`
 
 **Other priors**
 
 - `aux: exponential(1)`
-
 - `cov: decov(1, 1, 1, 1)`
 
 ## Age Group 1: 12-17 {.nostretch}
