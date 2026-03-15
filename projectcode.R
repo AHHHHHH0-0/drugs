@@ -4,6 +4,7 @@ library(dplyr)
 library(bayesrules)
 library(bayesplot)
 library(rstanarm)
+library(tidybayes)
 
 #loading in initial data csv
 drug_data <- read.csv("data/drugs.csv")
@@ -54,7 +55,7 @@ ggplot(alc_dis_rate_1825, aes(x = state, y = alc_dis_rate)) +
 adr_1825_hierarchical <- stan_glmer(
   alc_dis_rate ~ (1 | state),
   data = alc_dis_rate_1825, family = gaussian,
-  prior_intercept = (),
+  prior_intercept = normal(148, 30, autoscale = TRUE),
   prior_aux = exponential(1, autoscale = TRUE),
   prior_covariance = decov(reg = 1, conc = 1, shape = 1, scale = 1),
   chains = 4, iter=5000*2, seed=84375, refresh=FALSE)
