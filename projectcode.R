@@ -74,7 +74,7 @@ ggplot(state_summary_1217,
   geom_pointrange() +
   labs(title = "Posterior State Means: Alcohol Disorder Rate (12-17)",
        subtitle = "80% Credible Intervals",
-       x = "State", y = "Alcohol Disorder Rate (%)") +
+       x = "State", y = "Alcohol Disorder Rate (per 1000)") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 # predictive intervals
@@ -93,7 +93,7 @@ ppc_intervals(
   labels = new_states$state,
   breaks = 1:nrow(new_states)
 ) + labs(title = "Posterior Predictive Intervals by State (12-17)",
-         y = "Alcohol Disorder Rate (%)")
+         y = "Alcohol Disorder Rate (per 1000)")
 
 
 "
@@ -139,7 +139,7 @@ ggplot(state_summary_1825,
   geom_pointrange() +
   labs(title = "Posterior State Means: Alcohol Disorder Rate (18-25)",
        subtitle = "80% Credible Intervals",
-       x = "State", y = "Alcohol Disorder Rate (%)") +
+       x = "State", y = "Alcohol Disorder Rate (per 1000)") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 # predictive intervals
@@ -158,7 +158,7 @@ ppc_intervals(
     labels = new_states$state,
     breaks = 1:nrow(new_states)
   ) + labs(title = "Posterior Predictive Intervals by State (18-25)",
-       y = "Alcohol Disorder Rate (%)")
+       y = "Alcohol Disorder Rate (per 1000)")
 
 
 
@@ -206,7 +206,7 @@ ggplot(state_summary_26,
   geom_pointrange() +
   labs(title = "Posterior State Means: Alcohol Disorder Rate (26+)",
        subtitle = "80% Credible Intervals",
-       x = "State", y = "Alcohol Disorder Rate (%)") +
+       x = "State", y = "Alcohol Disorder Rate (per 1000)") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 # predictive intervals
@@ -225,7 +225,7 @@ ppc_intervals(
   labels = new_states$state,
   breaks = 1:nrow(new_states)
 ) + labs(title = "Posterior Predictive Intervals by State (26+)",
-         y = "Alcohol Disorder Rate (%)")
+         y = "Alcohol Disorder Rate (per 1000)")
 
 "
 AGE GROUP COMPARISONS
