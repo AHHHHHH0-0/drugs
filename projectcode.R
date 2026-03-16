@@ -230,3 +230,23 @@ ppc_intervals(
 "
 AGE GROUP COMPARISONS
 "
+
+# combine 3 sets of posterior credible intervals with new "age_group" column
+state_summary_all <- bind_rows(
+  state_summary_1217 %>% mutate(age_group = "12-17"),
+  state_summary_1825 %>% mutate(age_group = "18-25"),
+  state_summary_26 %>% mutate(age_group = "26+")
+)
+
+# plot clustered point/interval plot
+ggplot(state_summary_all,
+       aes(x = state, y = state_mean, ymin = .lower, ymax = .upper, color = age_group)) +
+  geom_pointrange(position = position_dodge(width = 0.5)) +
+  coord_flip() +
+  labs(title = "Posterior State Means: Alcohol Disorder Rate (across age groups)",
+       subtitle = "80% Credible Intervals",
+       x = "State", 
+       y = "Alcohol Disorder Rate (per 1000)",
+       color = "Age Group") +
+  theme(axis.text.x = element_text(hjust = 1))
+
