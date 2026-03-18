@@ -45,6 +45,13 @@ format:
 
 ## Data Description
 
+- **Source:**  NSDUH (National Survey on Drug Use and Health) conducted by SAMHSA
+- **Time Range:** 2002-2018 | **Scope:** All 50 US States 
+- **Survey Population:** Aged 12+ non institutionalized US civilian residents
+  - Excludes active-duty military, institutionalized  residents, those without addresses
+- **Data Collection:**  Confidential, in-person computer-assisted interviews, no names collected, to encourage honest reporting  
+- **Units:** Totals in thousands of people; rates are per 1000 people
+
 
 ## Problem/Question Description
 - Across different age groups, which state (out of the top 5 with the highest populations in the United States) has the highest rate of alcohol usage disorder?
