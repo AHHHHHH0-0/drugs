@@ -250,3 +250,34 @@ ggplot(state_summary_all,
        color = "Age Group") +
   theme(axis.text.x = element_text(hjust = 1))
 
+prob_highest_1825 <- adr_1825_hierarchical %>%
+  spread_draws(b[term, state], `(Intercept)`) %>%
+  mutate(state_mean = `(Intercept)` + b) %>%
+  group_by(.draw) %>%
+  mutate(is_highest = state_mean == max(state_mean)) %>%
+  group_by(state) %>%
+  summarise(P_highest = round(mean(is_highest), 3)) %>%
+  arrange(desc(P_highest)) %>%
+  mutate(state = str_remove(state, "state:")) %>%
+  slice_head(n = 5)
+
+kable(prob_highest_1825,
+      col.names = c("State", "P(highest)"),
+      caption = "P(state has highest rate) — 18–25")
+
+raw_means <- alc_dis_rate_1825 %>%
+  group_by(state) %>%
+  summarise(raw_mean = mean(alc_dis_rate))
+
+shrinkage_df <- state_summary_1825 %>%
+  mutate(state = str_remove(as.character(state), "state:")) %>%
+  left_join(raw_means, by = "state")
+
+ggplot(shrinkage_df, aes(y = reorder(state, state_mean))) +
+  geom_point(aes(x = raw_mean, color = "Raw"), size = 3) +
+  geom_point(aes(x = state_mean, color = "Posterior"), size = 3) +
+  geom_segment(aes(x = raw_mean, xend = state_mean, yend = state),
+               arrow = arrow(length = unit(0.15, "cm"))) +
+  labs(title = "Shrinkage (18–25)",
+       x = "Rate per 1,000", y = NULL, color = "") +
+  theme(legend.position = "bottom")
