@@ -6,8 +6,8 @@
 <script src="presentation_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="presentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="presentation_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran">
   <title>Stats 115 Final Presentation: Drug Use in Young Adults</title>
@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto-0c8acc74dca0c2faaedea4940f202713.css">
+  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto-06e768f098560084c2d7120de8ad04fb.css">
   <link href="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="presentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -138,13 +138,23 @@ Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran
 </div>
 
 </section>
-<section id="motivation-why-does-this-matter" class="slide level2 extra-small">
+<section id="motivation-why-does-this-matter" class="slide level2 reg">
 <h2>Motivation: Why Does This Matter?</h2>
 <style>
 .extra-small p,
 .extra-small li,
 .extra-small table {
-  font-size: 0.6em;
+  font-size: .6em;
+}
+.small p,
+.small li,
+.small table {
+  font-size: .8em;
+}
+.reg p,
+.reg li,
+.reg table {
+  font-size: 1em;
 }
 </style>
 <ul>
@@ -158,7 +168,7 @@ Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran
 <li>We get full posterior uncertainty, not just point estimates</li>
 </ul>
 </section>
-<section id="data-description" class="slide level2 extra-small">
+<section id="data-description" class="slide level2 reg">
 <h2>Data Description</h2>
 <ul>
 <li><strong>Source:</strong> NSDUH (National Survey on Drug Use and Health) conducted by SAMHSA</li>
@@ -172,7 +182,7 @@ Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran
 <li><strong>Units:</strong> Totals in thousands of people; rates are per 1000 people</li>
 </ul>
 </section>
-<section id="problemquestion-description" class="slide level2">
+<section id="problemquestion-description" class="slide level2 reg">
 <h2>Problem/Question Description</h2>
 <ul>
 <li>Across different age groups, which state (out of the top 10 with the highest populations in the United States) has the highest rate of alcohol usage disorder?</li>
@@ -224,7 +234,7 @@ Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran
 <li>Between-state variability: <code>prior_covariance = decov(1, 1, 1, 1)</code></li>
 </ul>
 </section>
-<section id="initial-plotting" class="slide level2 extra-small">
+<section id="initial-plotting" class="slide level2 small">
 <h2>Initial Plotting</h2>
 <div class="cell quarto-layout-panel" data-layout-ncol="3">
 <div class="quarto-layout-row">
@@ -260,7 +270,7 @@ Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran
 <li>States cluster near the global mean → motivates <strong>partial pooling</strong> via hierarchical model</li>
 </ul>
 </section>
-<section id="model-diagnostics" class="slide level2 extra-small">
+<section id="model-diagnostics" class="slide level2 small">
 <h2>Model Diagnostics</h2>
 <div class="cell quarto-layout-panel" data-layout-ncol="3">
 <div class="quarto-layout-row">
@@ -295,7 +305,7 @@ Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran
 <li>MCMC trace plots and ACF confirmed <strong>good chain mixing and convergence</strong> for all models</li>
 </ul>
 </section>
-<section id="age-group-1-credible-predictive-intervals" class="slide level2 extra-small">
+<section id="age-group-1-credible-predictive-intervals" class="slide level2 small">
 <h2>Age Group 1 Credible &amp; Predictive Intervals</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -327,7 +337,7 @@ Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran
 </ul>
 </div></div>
 </section>
-<section id="age-group-2-credible-predictive-intervals" class="slide level2 extra-small">
+<section id="age-group-2-credible-predictive-intervals" class="slide level2 small">
 <h2>Age Group 2 Credible &amp; Predictive Intervals</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -359,7 +369,7 @@ Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran
 </ul>
 </div></div>
 </section>
-<section id="age-group-3-credible-predictive-intervals" class="slide level2 extra-small">
+<section id="age-group-3-credible-predictive-intervals" class="slide level2 small">
 <h2>Age Group 3 Credible &amp; Predictive Intervals</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -418,23 +428,23 @@ Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Illinois</td>
-<td style="text-align: right;">0.418</td>
+<td style="text-align: right;">0.421</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Pennsylvania</td>
-<td style="text-align: right;">0.211</td>
+<td style="text-align: right;">0.218</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ohio</td>
-<td style="text-align: right;">0.174</td>
+<td style="text-align: right;">0.167</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Michigan</td>
-<td style="text-align: right;">0.112</td>
+<td style="text-align: right;">0.111</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">California</td>
-<td style="text-align: right;">0.050</td>
+<td style="text-align: right;">0.052</td>
 </tr>
 </tbody>
 </table>
@@ -665,7 +675,7 @@ Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran
         margin: 5.0e-2,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -692,80 +702,42 @@ Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran
       });
     </script>
     
-
     <script>
-
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
       // slide changes (different for each slide format).
-
       (function () {
-
         // dispatch for htmlwidgets
-
         function fireSlideEnter() {
-
           const event = window.document.createEvent("Event");
-
           event.initEvent("slideenter", true, true);
-
           window.document.dispatchEvent(event);
-
         }
-
-    
 
         function fireSlideChanged(previousSlide, currentSlide) {
-
           fireSlideEnter();
 
-    
-
           // dispatch for shiny
-
           if (window.jQuery) {
-
             if (previousSlide) {
-
               window.jQuery(previousSlide).trigger("hidden");
-
             }
-
             if (currentSlide) {
-
               window.jQuery(currentSlide).trigger("shown");
-
             }
-
           }
-
         }
-
-    
 
         // hookup for slidy
-
         if (window.w3c_slidy) {
-
           window.w3c_slidy.add_observer(function (slide_num) {
-
             // slide_num starts at position 1
-
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
           });
-
         }
 
-    
-
       })();
-
     </script>
-
-    
 
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -815,13 +787,14 @@ Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

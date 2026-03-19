@@ -8,7 +8,6 @@ format:
       margin: 0.05
       center: false
 ---
-
 ```{r setup, include=FALSE}
 library(tidyverse)
 library(ggplot2)
@@ -47,7 +46,6 @@ new_states <- data.frame(
   state = c("California", "Texas", "Florida", "New York", "Pennsylvania", "Illinois", "Ohio", "Georgia", "North Carolina", "Michigan")
 )
 ```
-
 ```{r modeling, include=FALSE}
 # models
 adr_1217_hierarchical <- stan_glmer(
@@ -96,13 +94,24 @@ state_summary_26 <- adr_26_hierarchical %>%
   mutate(state = fct_reorder(state, state_mean))
 ```
 
-## Motivation: Why Does This Matter?  {.extra-small}
+## Motivation: Why Does This Matter? {.reg}
+
 ```{r css, echo=FALSE, results='asis'}
 cat('<style>
 .extra-small p,
 .extra-small li,
 .extra-small table {
-  font-size: 0.6em;
+  font-size: .6em;
+}
+.small p,
+.small li,
+.small table {
+  font-size: .8em;
+}
+.reg p,
+.reg li,
+.reg table {
+  font-size: 1em;
 }
 </style>')
 ```
@@ -116,7 +125,7 @@ cat('<style>
 - Prior research gives us genuine information about expected rates by age — wasteful to ignore
 - We get full posterior uncertainty, not just point estimates
 
-## Data Description {.extra-small}
+## Data Description {.reg}
 
 - **Source:**  NSDUH (National Survey on Drug Use and Health) conducted by SAMHSA
 - **Time Range:** 2002-2018 | **Scope:** All 50 US States 
@@ -125,8 +134,7 @@ cat('<style>
 - **Data Collection:**  Confidential, in-person computer-assisted interviews, no names collected, to encourage honest reporting  
 - **Units:** Totals in thousands of people; rates are per 1000 people
 
-
-## Problem/Question Description 
+## Problem/Question Description {.reg}
 - Across different age groups, which state (out of the top 10 with the highest populations in the United States) has the highest rate of alcohol usage disorder?
 - Which age group has the overall highest rate?
 
@@ -148,7 +156,7 @@ cat('<style>
 - Residual SD: `prior_aux = exponential(1, autoscale = TRUE)`
 - Between-state variability: `prior_covariance = decov(1, 1, 1, 1)`
 
-## Initial Plotting {.extra-small}
+## Initial Plotting {.small}
 ```{r initial plots}
 #| label: initialplots
 #| fig-subcap:
@@ -176,7 +184,7 @@ ggplot(alc_dis_rate_26, aes(x = state, y = alc_dis_rate)) +
 - Rates are the **lowest** across all age groups for 12-17 and  **highest** for 18-25, which is consistent with national literature on adolescent alcohol use disorder
 - States cluster near the global mean → motivates **partial pooling** via hierarchical model
 
-##  Model Diagnostics {.extra-small}
+##  Model Diagnostics {.small}
 ```{r diagnostic plots}
 #| label: diagnostic plots
 #| fig-subcap:
@@ -194,7 +202,7 @@ pp_check(adr_26_hierarchical) +
 - PP check confirms the model captures **center and spread** of observed rates well for all 3 models
 - MCMC trace plots and ACF confirmed **good chain mixing and convergence** for all models
 
-## Age Group 1 Credible & Predictive Intervals {.extra-small}
+## Age Group 1 Credible & Predictive Intervals {.small}
 :::: {.columns}
 ::: {.column width="50%"}
 ```{r AG1 credible}
@@ -229,7 +237,7 @@ ppc_intervals(
 :::
 ::::
 
-## Age Group 2 Credible & Predictive Intervals {.extra-small}
+## Age Group 2 Credible & Predictive Intervals {.small}
 :::: {.columns}
 ::: {.column width="50%"}
 ```{r AG2 credible}
@@ -266,7 +274,7 @@ ppc_intervals(
 ::::
 
 
-## Age Group 3 Credible & Predictive Intervals {.extra-small}
+## Age Group 3 Credible & Predictive Intervals {.small}
 :::: {.columns}
 ::: {.column width="50%"}
 ```{r AG3 credible}
