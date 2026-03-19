@@ -6,8 +6,8 @@
 <script src="presentation_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="presentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="presentation_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran">
   <title>Stats 115 Final Presentation: Drug Use in Young Adults</title>
@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto-06e768f098560084c2d7120de8ad04fb.css">
+  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto-0c8acc74dca0c2faaedea4940f202713.css">
   <link href="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="presentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -428,23 +428,23 @@ Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Illinois</td>
-<td style="text-align: right;">0.421</td>
+<td style="text-align: right;">0.418</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Pennsylvania</td>
-<td style="text-align: right;">0.218</td>
+<td style="text-align: right;">0.211</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ohio</td>
-<td style="text-align: right;">0.167</td>
+<td style="text-align: right;">0.174</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Michigan</td>
-<td style="text-align: right;">0.111</td>
+<td style="text-align: right;">0.112</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">California</td>
-<td style="text-align: right;">0.052</td>
+<td style="text-align: right;">0.050</td>
 </tr>
 </tbody>
 </table>
@@ -469,8 +469,8 @@ Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran
 </div>
 </div>
 </div>
-</div><div class="column" style="width:60%;">
 <p><strong>Shrinkage:</strong> arrows show raw state means pulled toward the global mean via partial pooling — extreme values are moderated, especially for noisier states</p>
+</div><div class="column" style="width:60%;">
 <p><strong>Conclusions:</strong></p>
 <ul>
 <li><strong>18–25</strong> has the highest AUD rates universally</li>
@@ -675,7 +675,7 @@ Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran
         margin: 5.0e-2,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -702,42 +702,80 @@ Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran
       });
     </script>
     
+
     <script>
+
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
       // slide changes (different for each slide format).
+
       (function () {
+
         // dispatch for htmlwidgets
+
         function fireSlideEnter() {
+
           const event = window.document.createEvent("Event");
+
           event.initEvent("slideenter", true, true);
+
           window.document.dispatchEvent(event);
+
         }
+
+    
 
         function fireSlideChanged(previousSlide, currentSlide) {
+
           fireSlideEnter();
 
+    
+
           // dispatch for shiny
+
           if (window.jQuery) {
+
             if (previousSlide) {
+
               window.jQuery(previousSlide).trigger("hidden");
+
             }
+
             if (currentSlide) {
+
               window.jQuery(currentSlide).trigger("shown");
+
             }
+
           }
+
         }
+
+    
 
         // hookup for slidy
+
         if (window.w3c_slidy) {
+
           window.w3c_slidy.add_observer(function (slide_num) {
+
             // slide_num starts at position 1
+
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
           });
+
         }
 
+    
+
       })();
+
     </script>
+
+    
 
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -787,14 +825,13 @@ Group 14: Melody Fang, Andrew Liu, Hasnain Sizar, Tyler Tran
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
             }
-          }
-          return codeEl.innerText;
+            return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
