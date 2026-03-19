@@ -127,7 +127,7 @@ cat('<style>
 
 ## Data Description {.reg}
 
-- **Source:**  NSDUH (National Survey on Drug Use and Health) conducted by SAMHSA
+- **Source:**  NSDUH (National Survey on Drug Use and Health) conducted by SAMHSA (Substance Abuse and Mental Health Service Administration)
 - **Time Range:** 2002-2018 | **Scope:** All 50 US States 
 - **Survey Population:** Aged 12+ non institutionalized US civilian residents
   - Excludes active-duty military, institutionalized  residents, those without addresses
@@ -180,7 +180,7 @@ ggplot(alc_dis_rate_26, aes(x = state, y = alc_dis_rate)) +
   geom_boxplot() +
   labs(title = "Alcohol Disorder Rate for Age Range 26+", x = "State", y = "Alcohol Disorder Rate") + geom_hline(yintercept = mean_rate, color = "red", linetype = "solid")
 ```
-- The **red line** marks the overall mean across all 5 states for each age group
+- The **red line** marks the overall mean across all 10 states for each age group
 - Rates are the **lowest** across all age groups for 12-17 and  **highest** for 18-25, which is consistent with national literature on adolescent alcohol use disorder
 - States cluster near the global mean → motivates **partial pooling** via hierarchical model
 
@@ -309,7 +309,6 @@ ppc_intervals(
 :::
 ::::
 
-
 ## Age Group Comparison & Hypothesis Testing {.extra-small}
 
 :::: {.columns}
@@ -352,11 +351,11 @@ kable(prob_highest_1825,
 :::
 ::::
 
-## Shrinkage, Conclusion & Future Directions {.extra-small}
+## Conclusion & Future Directions {.extra-small}
 **Conclusions:**
 
 - **18–25** has the highest AUD rates universally
-- Top states vary by age group but **PA and IL** appear near the top consistently
+- Top states vary by age group but **IL and PA** appear near the top consistently
 - Hierarchical model with partial pooling was the right choice — no state is a dramatic outlier once pooling is applied
 
 **Limitations & Future Work:**
@@ -364,3 +363,5 @@ kable(prob_highest_1825,
 - Data ends **2018** — post-pandemic trends are unaccounted for
 - State aggregation hides demographic variation (income, race, urbanicity)
 - Future: add time trend, demographic covariates, expand to all substances
+
+# Thank You!
