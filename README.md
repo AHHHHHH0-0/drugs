@@ -18,7 +18,7 @@ Our goal is to identify which states have the highest AUD rates and which age gr
 - **States used in analysis:** 10 most populous U.S. states
 
 ## Method
-We fit separate Bayesian hierarchical Gaussian models for each age group, using **state** as the grouping variable and **partial pooling** across states.
+We fit three separate hierarchical models, one for each age group (12-17, 18-25, and 26+). For each model, we use data from the 10 most populous states, with **state** as the grouping variable and **partial pooling** across states. We assume each age group has a separate normal distribution.
 
 ### Priors
 - 12–17: `normal(30, 15)`
